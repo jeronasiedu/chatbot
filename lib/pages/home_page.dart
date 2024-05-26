@@ -1,3 +1,4 @@
+import 'package:chatbot/pages/speak_to_ai_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,16 +18,25 @@ class HomePage extends StatelessWidget {
           children: [
             const PremiumPlanCard(),
             const SizedBox(height: 20),
-            const Row(
+            Row(
               children: [
                 IdeaCard(
                   title: "Generate ideas and write articles",
                   icon: Icons.edit_location_alt_outlined,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SpeakToAIPage(),
+                      ),
+                    );
+                  },
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 IdeaCard(
                   title: "Generate ideas and write articles",
                   icon: Icons.edit_location_alt_outlined,
+                  onTap: () {},
                 ),
               ],
             ),

@@ -5,10 +5,13 @@ class IdeaCard extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
+    required this.onTap,
   });
 
   final IconData icon;
   final String title;
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class IdeaCard extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           color: const Color(0xff232729),
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
