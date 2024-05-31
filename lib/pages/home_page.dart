@@ -1,3 +1,4 @@
+import 'package:chatbot/pages/chat_with_ai_page.dart';
 import 'package:chatbot/pages/speak_to_ai_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,13 @@ class HomePage extends StatelessWidget {
                 6,
                 (index) {
                   return ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ChatWithAiPage(),
+                          ));
+                    },
                     titleTextStyle: theme.textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
